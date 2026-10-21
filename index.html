@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eff0e5">
+  <title>把星星送到你身边 · 星光花园</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="content.js"></script>
+  <script defer src="state.js"></script>
+  <script defer src="game.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="星光花园首页"><span class="brand-star">✧</span><span>星光花园<small>A LITTLE WORLD, JUST FOR YOU</small></span></a>
+    <div class="top-actions"><button id="sound-button" class="quiet-button" aria-pressed="false">♫ 音乐关</button><button id="fullscreen-button" class="quiet-button">⛶ 全屏</button></div>
+  </header>
+
+  <main>
+    <section id="landing" class="landing">
+      <div class="cover-art" aria-hidden="true"><canvas id="cover-canvas"></canvas></div>
+      <div class="cover-shade"></div>
+      <div class="invitation">
+        <p class="eyebrow"><span></span> AN INVITATION TO YOUR LITTLE UNIVERSE</p>
+        <p id="cover-recipient" class="recipient">给亲爱的你，一封生日邀请</p>
+        <h1>把星星<br>送到<span>你身边</span><i>✧</i></h1>
+        <p id="cover-intro" class="cover-intro"></p>
+        <button id="start-button" class="primary-button">打开这封邀请 <span>↗</span></button>
+        <div class="cover-details"><span>✧ 三颗星星</span><span>♡ 一路心意</span><span>约 8–12 分钟</span></div>
+      </div>
+      <div class="cover-stamp"><span>FOR YOU</span><b>愿你的每一个愿望<br>都有星光回应</b><i>with all my love</i></div>
+      <footer class="cover-footer"><span>A BIRTHDAY ADVENTURE</span><span>慢慢来，这里的时间都属于你。</span><span>01 / OUR LITTLE GARDEN</span></footer>
+    </section>
+
+    <section id="game" class="game-shell" hidden>
+      <div class="journey-bar"><div><p class="eyebrow" id="chapter-kicker">CHAPTER 01</p><h2 id="chapter-title">相遇花园</h2></div><div id="star-progress" class="star-progress" aria-label="已找到 0 颗星星"><span>✧</span><span>✧</span><span>✧</span></div><button id="journal-button" class="quiet-button">▤ 口袋里的回忆 <span id="memory-count">0</span></button></div>
+      <div class="world-frame">
+        <canvas id="world" width="1440" height="900" tabindex="0" aria-label="星光花园游戏地图。使用方向键或 WASD 移动，E 互动。"></canvas>
+        <div class="objective-card"><span class="objective-icon">✦</span><div><span class="small-label">跟着一点点星光</span><p id="objective"></p></div></div>
+        <div class="map-caption">THE STARLIT GARDEN <span>✧</span></div>
+        <button id="interact-button" class="interaction-prompt" hidden><kbd>E</kbd><span></span></button>
+        <div class="map-legend"><i></i> 你在这里，故事就开始了</div>
+        <div id="toast" class="toast" role="status" hidden></div>
+      </div>
+      <footer class="game-footer"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> / 方向键 移动 <b>·</b> <kbd>E</kbd> 互动</span><span>不必赶路，也没有答错的选择。</span><button id="restart-button" class="text-button">重新开始</button></footer>
+    </section>
+  </main>
+
+  <dialog id="story-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span id="dialog-kicker" class="eyebrow"></span><button id="dialog-close" class="icon-button" aria-label="关闭">×</button></div><div id="dialog-content"></div><div id="dialog-actions" class="dialog-actions"></div><p id="dialog-note" class="dialog-note"></p></dialog>
+  <dialog id="photo-dialog" aria-label="完整查看照片"><button id="photo-close" class="icon-button" aria-label="关闭照片">×</button><div id="photo-view"></div></dialog>
+  <noscript>请在浏览器中启用 JavaScript，然后重新打开这封邀请。</noscript>
+</body>
+</html>

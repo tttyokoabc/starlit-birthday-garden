@@ -1,0 +1,13 @@
+node_modules/
+test-results/
+*.zip
+
+# Keep local personal material and credentials out of source control.
+/photos/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db

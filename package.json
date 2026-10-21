@@ -1,0 +1,16 @@
+{
+  "name": "starlit-birthday-garden",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "An offline, illustrated birthday adventure",
+  "scripts": {
+    "check": "node --check content.js && node --check state.js && node --check game.js",
+    "test": "node --test tests/*.test.cjs",
+    "test:browser": "node tests/browser.cjs",
+    "test:browser:chromium": "node tests/browser.cjs --chromium"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.0"
+  }
+}
